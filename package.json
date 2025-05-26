@@ -1,4 +1,7 @@
 {
   "name": "hardhat-erc20-fcc",
-  "packageManager": "yarn@4.5.2"
+  "packageManager": "yarn@4.5.2",
+  "devDependencies": {
+    "hardhat": "^2.24.0"
+  }
 }
