@@ -1,6 +1,9 @@
 {
   "name": "hardhat-erc20-fcc",
   "packageManager": "yarn@4.5.2",
+  "scripts": {
+    "test": "hardhat test"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",

@@ -1,10 +1,13 @@
+const { vars } = require("hardhat/config");
+
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("dotenv").config();
 
-const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY = vars.get("SEPOLIA_PRIVATE_KEY");
+const ALCHEMY_API_KEY = vars.get("ALCHEMY_API_KEY");
+const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -18,8 +21,18 @@ module.exports = {
     },
     sepolia: {
       chainId: 11155111,
-      url: SEPOLIA_RPC_URL,
+      url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
       accounts: [PRIVATE_KEY],
     },
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: ETHERSCAN_API_KEY,
+  },
+  sourcify: {
+    // Disabled by default
+    // Doesn't need an API key
+    enabled: true,
   },
 };
