@@ -2,7 +2,10 @@
   "name": "hardhat-erc20-fcc",
   "packageManager": "yarn@4.5.2",
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "deploy-localhost": "hardhat ignition deploy ./ignition/modules/$0 --network localhost",
+    "deploy-sepolia": "hardhat ignition deploy ./ignition/modules/$0 --network sepolia",
+    "deploy-sepolia-verify": "hardhat ignition deploy ./ignition/modules/$0 --network sepolia --verify"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
